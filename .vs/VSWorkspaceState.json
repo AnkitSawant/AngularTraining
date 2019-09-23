@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\search-book",
+    "\\src\\app\\search-result",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\search-result\\search-result.component.ts",
+  "PreviewInSolutionExplorer": false
+}

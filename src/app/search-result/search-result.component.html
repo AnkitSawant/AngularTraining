@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <h4 align="center">SearchResult Component</h4>
+  </div>
+  <div class="card-body">
+
+    <h4 *ngIf="result!=undefined || result!=null ; else sometemplate">
+        {{result.bookname}} <br/>
+        {{result.publisher}} <br/>
+        {{result.price}} <br/>
+    </h4>
+
+    <!--<ng-template #sometemplate>
+      <p>
+        BOOK NOT FOUND
+      </p>
+    </ng-template>
+        -->
+
+    <!-- <p *ngIf="result==undefined || result==null">
+      BOOK NOT FOUND
+    </p> -->
+  </div>
+</div>

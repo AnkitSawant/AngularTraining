@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <h4 align="center">SearchBook Component</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Book code to search:
+      <input type="text" [(ngModel)]="bookid"/>
+
+      <span *ngIf="bookid!=null || bookid!=undefined">
+        {{errormessage}}
+      </span>
+    </p>
+
+    <button class="btn btn-primary">Get Details</button>
+    <br/><br/>
+    <search-result [searchbookid]="bookid" (errorevent)="GetErrorMessage($event)">
+
+    </search-result>
+  </div>
+</div>
