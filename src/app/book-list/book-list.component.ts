@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {allbooks} from '../BookRepository';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {BooksService} from '../books.service';
 
 @Component({
   selector: 'book-list',
@@ -8,10 +8,15 @@ import {allbooks} from '../BookRepository';
 })
 export class BookListComponent implements OnInit
 {
-  private books:any[] = allbooks;
+  private books:any[];
   private showbooks:boolean = false;
 
-  constructor() { }
+  @Output()
+  bookid:EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(private booksvc: BooksService) { 
+    this.books = this.booksvc.GetAllBooks();
+  }
 
   Show():void
   {
@@ -22,8 +27,14 @@ export class BookListComponent implements OnInit
     this.showbooks = false;
   }
 
+  setBookId(bookid: number): void{
+    this.bookid.emit(bookid);
+  }
 
-
+  deleteBook(bookid: number): void{
+    this.booksvc.DeleteBook(bookid);
+  }
+  
   ngOnInit() {
   }
 

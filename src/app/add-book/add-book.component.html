@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    <h4 align="center">AddBook Component</h4>
+  </div>
+  <div class="card-body">
+    <p>
+      Book Id:
+      <input type="text" [(ngModel)]="bookid"/>
+    </p>
+    <p>
+        Book Name:
+        <input type="text" [(ngModel)]="bookname"/>
+    </p>
+
+    <p>
+        Publisher
+        <input type="text" [(ngModel)]="publisher"/>
+    </p>
+
+    <p>
+        Price
+        <input type="text" [(ngModel)]="price"/>
+    </p>
+
+    <p>
+        Thumbnail Image: (Choose image file)
+        <input type="file" [(ngModel)]="thumbnail"/>
+    </p>
+
+    <button class="btn btn-primary" (click)="AddBook()">
+      Add Book
+    </button>
+  </div>
+</div>

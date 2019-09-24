@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angulartraining2019';
+  private bookid: number;
+
+  getBookId(bookid: number): void{
+    this.bookid = bookid;
+  }
 }

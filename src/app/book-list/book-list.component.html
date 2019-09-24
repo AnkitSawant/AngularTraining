@@ -9,17 +9,17 @@
 
     <div *ngIf="showbooks==true">
         <h4>Total books: {{books.length}}</h4>
-
+        <hr/>
         <div *ngFor="let b of books">
           <h5>Book Code: {{b.bookid}}</h5>
           <span>Book Name: {{b.bookname}}</span> <br/>
           <span>Publisher: {{b.publisher}}</span> <br/>
           <span>Price: {{b.price}}</span> <br/>
-          <span>Image File: {{b.thumbnail}}</span> <br/>
-          <img height="80px" width="80px" src="{{b.thumbnail}}"/>
-          <button class="btn btn-primary">Edit this book</button>
+          <span>Image File: {{b.thumbnail}}</span> <br/><br/>
+          <img height="80px" width="80px" src="{{b.thumbnail}}"/><br/><br/>
+          <button class="btn btn-primary" (click)="setBookId(b.bookid)">Edit this book</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-danger">Delete this book</button>
+          <button class="btn btn-danger" (click)="deleteBook(b.bookid)">Delete this book</button>
           <hr/>
         </div>
     </div>

@@ -5,8 +5,10 @@
          <h2 align="center">Root Component</h2>
        </div>
        <div class="card-body">
-         <book-list></book-list>
+         <book-list (bookid)=getBookId($event)></book-list>
          <search-book></search-book>
+         <add-book></add-book>
+         <edit-book [bookid]="bookid"></edit-book>
        </div>
      </div>
 
