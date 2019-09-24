@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h4 align="center">Observable Component</h4>
+  </div>
+  <div class="card-body">
+    <button class="btn btn-warning" (click)="SubcribeToObsrevable()">Subcribe</button>
+  </div>
+
+  <p>
+    Operand1:
+    <input type="text" [(ngModel)]="operand1" />
+  </p>
+
+  <p>
+    Operand2:
+    <input type="text" [(ngModel)]="operand2" />
+  </p>
+
+  <button class="btn btn-warning" (click)="performAdd()">Add</button>
+
+</div>
+

@@ -3,10 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\search-book",
-    "\\src\\app\\search-result",
+    "\\src\\app\\observable",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\search-result\\search-result.component.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

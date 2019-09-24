@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { ObservableComponent } from './observable/observable.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,11 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     SearchBookComponent,
     SearchResultComponent,
     AddBookComponent,
-    EditBookComponent
+    EditBookComponent,
+    ObservableComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

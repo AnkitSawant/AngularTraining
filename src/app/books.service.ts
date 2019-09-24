@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'; 
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class BooksService
 
   private bookid: number;
 
-  constructor()
+  constructor(private http: HttpClient)
   {
     console.log("BooksService constr called");
   }
@@ -101,5 +103,7 @@ export class BooksService
     }
     return "Book with id: " +newbookdetails.bookid +" edited";
   }
+
+
 
 }
