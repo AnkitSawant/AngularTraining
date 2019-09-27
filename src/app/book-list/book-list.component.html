@@ -1,27 +1,60 @@
 <div class="card">
   <div class="card-header">
     <h4 align="center">BookList Component</h4>
+    <base href="/">
   </div>
   <div class="card-body">
-    <button class="btn btn-primary" (click)="Show()">Show All Books</button>
+    <button class="btn btn-primary" *ngIf="!showbooks" (click)="Show()">Show All Books</button>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <button class="btn btn-primary" (click)="Hide()">Hide All Books</button>
+    <button class="btn btn-primary" *ngIf="showbooks" (click)="Hide()">Hide All Books</button>
 
     <div *ngIf="showbooks==true">
-        <h4>Total books: {{books.length}}</h4>
+        <!-- <h4>Total books: {{books.length}}</h4>
         <hr/>
         <div *ngFor="let b of books">
-          <h5>Book Code: {{b.bookid}}</h5>
-          <span>Book Name: {{b.bookname}}</span> <br/>
-          <span>Publisher: {{b.publisher}}</span> <br/>
-          <span>Price: {{b.price}}</span> <br/>
-          <span>Image File: {{b.thumbnail}}</span> <br/><br/>
-          <img height="80px" width="80px" src="{{b.thumbnail}}"/><br/><br/>
-          <button class="btn btn-primary" (click)="setBookId(b.bookid)">Edit this book</button>
+          <h5>Book Code: {{b.BookId}}</h5>
+          <span>Book Name: {{b.Name}}</span> <br/>
+          <span>Publisher: {{b.Publisher}}</span> <br/>
+          <span>Price: {{b.Price}}</span> <br/>
+          <span>Image File: {{b.Thumbnail}}</span> <br/><br/>
+          <img height="80px" width="80px" src="{{b.Thumbnail}}"/><br/><br/>
+          <button class="btn btn-primary" (click)="setBookId(b.BookId)">Edit this book</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-          <button class="btn btn-danger" (click)="deleteBook(b.bookid)">Delete this book</button>
+          <button class="btn btn-danger" (click)="deleteBook(b.BookId)">Delete this book</button>
           <hr/>
-        </div>
+        </div> -->
+
+        <table style="width:100%">
+          <tr>
+            <th>Book Code</th>
+            <th>Image</th>
+            <th>Book Name</th>
+            <th>Publisher</th>
+            <th>Price <br>
+              <select [(ngModel)]="currency" value='INR'>
+                <option value='INR'>Rupee</option>
+                <option value='USD'>US Dollar</option>
+                <option value='EUR'>Euro</option>
+              </select>
+            </th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let b of books" (click)="selectBook(b)">
+            <td style="width: 10%">{{b.BookId}}</td>
+            <td style="width: 30%">
+                <img src="{{b.Thumbnail}}" height="80px" width="80px"/><br />
+                   <!-- <p *ngIf="b.bookname == selectedbook.bookname"> <strong>Summary:</strong>  {{b.summary}}</p> -->
+            </td>
+            <td style="width: 20%">{{b.Name}}</td>
+            <td style="width: 10%">{{b.Publisher}}</td>
+            <td style="width: 10%">{{b.Price | currencyConverter: currency | currency: currency}}</td>
+            <td style="width: 10%"><button class="btn btn-primary" (click)="setBookId(b.BookId)">Edit</button></td>
+            <td style="width: 10%"><button class="btn btn-danger" (click)="deleteBook(b.BookId)">Delete</button></td>
+            <hr />
+          </tr>
+        </table>
+
     </div>
 
     <!-- <select>

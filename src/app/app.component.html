@@ -3,16 +3,44 @@
      <div class="card">
        <div class="card-header">
          <h2 align="center">Root Component</h2>
+         <base href="/">
        </div>
        <div class="card-body">
          <!--<book-list (bookid)=getBookId($event)></book-list>
          <search-book></search-book>
          <add-book></add-book>
-         <edit-book [bookid]="bookid"></edit-book>-->
-         <observable></observable>
+         <edit-book [bookid]="bookid"></edit-book>
+         <observable></observable>-->
+         <ul>
+           <li routerLinkActive="active" class="btn btn-primary">
+              <a routerLink="booklist" style="color: white">Book List</a>
+           </li>
+           &nbsp;&nbsp;&nbsp;&nbsp;
+           <li routerLinkActive="active" class="btn btn-primary">
+            <a routerLink="searchbook" style="color: white">Search Book</a>
+         </li>
+         &nbsp;&nbsp;&nbsp;&nbsp;
+         <li routerLinkActive="active" class="btn btn-primary">
+          <a routerLink="addbook" style="color: white">Add Book</a>
+       </li>
+       <!-- &nbsp;&nbsp;&nbsp;&nbsp;
+         <li routerLinkActive="active" class="btn btn-primary">
+          <a routerLink="home" style="color: white">Home</a>
+       </li>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+         <li routerLinkActive="active" class="btn btn-primary">
+          <a routerLink="aboutus" style="color: white">About us</a>
+       </li>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+         <li routerLinkActive="active" class="btn btn-primary">
+          <a routerLink="downloads" style="color: white">Downloads</a>
+       </li>
+       &nbsp;&nbsp;&nbsp;&nbsp; -->
+    
+        </ul>
+         <router-outlet></router-outlet>
        </div>
      </div>
-
    </div>
   </div>
 

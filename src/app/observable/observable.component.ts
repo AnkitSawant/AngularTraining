@@ -10,6 +10,10 @@ export class ObservableComponent implements OnInit {
 
   private operand1: any;
   private operand2: any;
+  private currency: string;
+  private paisa: number = 100;
+  
+
   private ob: Observable<string> = new Observable<string>(function (source) {
 
     setTimeout(function () {
@@ -23,7 +27,7 @@ export class ObservableComponent implements OnInit {
     }, 10000);
   });
 
-  private adderObservale: Observable<number> = new Observable<number>(source => {
+  private adderObservable: Observable<number> = new Observable<number>(source => {
 
     console.log("adder observable");
 
@@ -48,7 +52,7 @@ export class ObservableComponent implements OnInit {
 
   private Add(n1: number, n2: number): Observable<number> {
 
-    return this.adderObservale;
+    return this.adderObservable;
   }
 
   performAdd() {

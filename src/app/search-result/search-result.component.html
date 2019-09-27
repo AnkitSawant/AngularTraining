@@ -4,10 +4,10 @@
   </div>
   <div class="card-body">
 
-    <h4 *ngIf="result!=undefined || result!=null ; else sometemplate">
-        {{result.bookname}} <br/>
-        {{result.publisher}} <br/>
-        {{result.price}} <br/>
+    <h4 *ngIf="result">
+        {{result.Name}} <br/>
+        {{result.Publisher}} <br/>
+        {{result.Price}} <br/>
     </h4>
 
     <!--<ng-template #sometemplate>

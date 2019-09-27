@@ -3,32 +3,34 @@
     <h4 align="center">AddBook Component</h4>
   </div>
   <div class="card-body">
+    <form #addForm="ngForm" (submit)="AddBook()">
     <p>
       Book Id:
-      <input type="text" [(ngModel)]="bookid"/>
+      <input type="text" [(ngModel)]="bookid" name="id"/>
     </p>
     <p>
         Book Name:
-        <input type="text" [(ngModel)]="bookname"/>
+        <input type="text" [(ngModel)]="bookname" name="bookname"/>
     </p>
 
     <p>
         Publisher
-        <input type="text" [(ngModel)]="publisher"/>
+        <input type="text" [(ngModel)]="publisher" name="publisher"/>
     </p>
 
     <p>
         Price
-        <input type="text" [(ngModel)]="price"/>
+        <input type="text" [(ngModel)]="price" name="price"/>
     </p>
 
     <p>
         Thumbnail Image: (Choose image file)
-        <input type="file" [(ngModel)]="thumbnail"/>
+        <input type="file" [(ngModel)]="thumbnail" name="thumbnail"/>
     </p>
 
-    <button class="btn btn-primary" (click)="AddBook()">
+    <button class="btn btn-primary" type="submit">
       Add Book
     </button>
+  </form>
   </div>
 </div>

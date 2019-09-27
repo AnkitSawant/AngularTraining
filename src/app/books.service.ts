@@ -104,6 +104,23 @@ export class BooksService
     return "Book with id: " +newbookdetails.bookid +" edited";
   }
 
+  GetAllBooksAsync(): Observable<any>{
+    return this.http.get('https://booksapi20190927045649.azurewebsites.net/books');
+  }
 
+  GetBookByIdAsync(bookid: number): Observable<any>{
+    return this.http.get('https://booksapi20190927045649.azurewebsites.net/books/'+bookid);
+  }
 
+  EditBookAsync(bookid: number, book: any): Observable<any>{
+    return this.http.put('https://booksapi20190927045649.azurewebsites.net/editbook/'+bookid,book);
+  }
+
+  AddBookAsync(book: any) :Observable<any>{
+    return this.http.post('https://booksapi20190927045649.azurewebsites.net/addbook',book);
+  }
+
+  DeleteBookAsync(bookid: number) :Observable<any>{
+    return this.http.delete('https://booksapi20190927045649.azurewebsites.net/deletebook/'+bookid);
+  }
 }

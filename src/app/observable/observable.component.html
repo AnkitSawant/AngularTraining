@@ -18,5 +18,14 @@
 
   <button class="btn btn-warning" (click)="performAdd()">Add</button>
 
+  <span>{{paisa | currencyConverter: currency | currency: currency}}</span>
+
+  <select [(ngModel)]="currency">
+    <option value='INR'>Rupee</option>
+    <option value='USD'>US Dollar</option>
+    <option value='EUR'>Euro</option>
+  </select>
+
+
 </div>
 
