@@ -7,10 +7,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerService {
 
-  logstatus; boolean;
+  logstatus: boolean;
   constructor(private http : HttpClient) { 
     this.logstatus = false;
   }
+
+   fname: string;
+   lname: string;
+   gender: string;
+   address: string;
+   city: string;
+  state: string;
+   email: string; 
 
   GetAllCustomersAsync(): Observable<any>{
     return this.http.get('http://localhost:8080/SpringRest/customers');
@@ -24,7 +32,17 @@ export class CustomerService {
     return this.http.put('http://localhost:8080/SpringRest/editcustomer',customer);
   }
 
-  AddCustomersAsync(customer: any) :Observable<any>{
+  AddCustomersAsync() :Observable<any>{
+   
+    let customer: any={
+      firstName:this.fname,
+      lastName:this.lname,
+      gender:this.gender,
+      address:this.address,
+      city:this.city,
+      state:this.state,
+      email:this.email,
+    }
     return this.http.post('http://localhost:8080/SpringRest/addcustomer',customer);
   }
 

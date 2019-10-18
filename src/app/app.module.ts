@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer.service';
 import { AddcustomerComponent } from './customers/addcustomer/addcustomer.component';
 import { EditcustomerComponent } from './customers/editcustomer/editcustomer.component';
-import { CustomerModule } from './customer/customer.module';
 import { AccountComponent } from './customers/addcustomer/account/account.component';
 import { ProfileComponent } from './customers/addcustomer/profile/profile.component';
 import { FinishComponent } from './customers/addcustomer/finish/finish.component';
@@ -26,6 +25,7 @@ const appRoutes: Routes = [
     { path:'account', component:AccountComponent},
     { path:'profile', component:ProfileComponent},
     { path:'finish', component:FinishComponent},
+    { path:'', redirectTo: '/customers/addCustomer/account', pathMatch: 'full'}
   ]
 
 },

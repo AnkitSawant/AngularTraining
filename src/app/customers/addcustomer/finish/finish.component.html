@@ -1,1 +1,16 @@
-<p>finish works!</p>
+<form #accountform="ngForm">
+    <!-- <div class="card card-primary">
+        <div class="card card-heading"><h2 class="card card-title">Login</h2><br></div>
+        <div class="card card-body"> -->
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="email" name="email" class="form-control" required><br>
+</div>
+
+
+<button type="submit"  class="btn btn-primary" (click)="previous()">Previous</button> &nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit"  class="btn btn-primary" (click)="next()">Submit</button>
+         
+        
+</form>

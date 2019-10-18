@@ -1,5 +1,5 @@
 
-        <form >
+        <form #accountform="ngForm">
             <!-- <div class="card card-primary">
                 <div class="card card-heading"><h2 class="card card-title">Login</h2><br></div>
                 <div class="card card-body"> -->
@@ -17,16 +17,16 @@
         <div class="form-group">
             <label for="gender">Gender</label>
             <br>
-            <input id="gender" type="radio"  name="gender" value="Male" class="form-check-input">
+            <input id="gender" type="radio"  name="gender" [(ngModel)]="gender" value="Male" class="form-check-input">
             <label class="form-check-label">Male</label><br>
-            <input id="gender" type="radio" name="gender" value="Female" class="form-check-input">
+            <input id="gender" type="radio" name="gender" [(ngModel)]="gender" value="Female" class="form-check-input">
             <label class="form-check-label">Female</label>
 
         </div>
 
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" (click)="next()">Next</button>
          
-
+          
         </form>
 
     
