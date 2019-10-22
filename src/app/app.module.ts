@@ -27,9 +27,9 @@ const appRoutes: Routes = [
     { path:'finish', component:FinishComponent},
     { path:'', redirectTo: '/customers/addCustomer/account', pathMatch: 'full'}
   ]
-
-},
   
+},
+{ path:'editcustomer/:id', component:EditcustomerComponent},
   { path:'', redirectTo: '/login', pathMatch: 'full'}
 
 ]

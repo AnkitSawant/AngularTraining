@@ -8,8 +8,7 @@
 <div class="card card-primary" >
     
         <div class="card-heading">
-             <h3 class="card-title navbar navbar-dark bg-primary" style="color: white">{{customer.firstName}} {{customer.lastName}}</h3>
-             <i class="fa fa-pencil-square-o"></i>
+             <h3 class="card-title navbar navbar-dark bg-primary" style="color: white">{{customer.firstName}} {{customer.lastName}} <button class="btn" (click)="edit(customer.id)"><i float="left" class='fa fa-edit' style="color: white; font-size:36px"></i></button></h3>
             </div>
         
         <div class="card-body">
@@ -102,5 +101,5 @@
               <hr />
             </tr>
         </tbody>
-          </table>
-        </div>
+       </table>
+   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -10,7 +11,7 @@ export class CustomersComponent implements OnInit {
 
 gridView: Boolean = true;
 customers: any;
-  constructor(private csvc : CustomerService) {
+  constructor(private csvc : CustomerService, private router: Router) {
     this.csvc.GetAllCustomersAsync().subscribe( data => {
       this.customers = data;
     });
@@ -21,6 +22,10 @@ customers: any;
 
   ViewType(): void{
     this.gridView = !this.gridView;
+  }
+
+  edit(customerid: number){
+    this.router.navigate(['/editcustomer',customerid]);
   }
 
 } 
